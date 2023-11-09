@@ -13,25 +13,42 @@
 		<div class="container">
 			<div class="flex-w flex-tr">
 				<div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
-					<form>
-						<h4 class="mtext-105 cl2 txt-center p-b-30">
-							REGISTRO
-						</h4>
-
-						<div class="bor8 m-b-20 how-pos4-parent">
-							<input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="text" name="email" placeholder="Your Email Address">
-							<img class="how-pos4 pointer-none" src="images/icons/icon-email.png" alt="ICON">
-						</div>
-
-						<div class="bor8 m-b-30">
-							<textarea class="stext-111 cl2 plh3 size-120 p-lr-28 p-tb-25" name="msg" placeholder="How Can We Help?"></textarea>
-						</div>
-
-						<button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
-							registrar
-						</button>
-					</form>
+					<form action="{{ route('guardar.persona') }}" method="POST" enctype="multipart/form-data">
+						 @csrf
+						<div class="mb-3">
+							<label for="exampleFormControlInput1" class="form-label">Nombres</label>
+							<input type="text" class="form-control" name ="nombres" id="exampleFormControlInput1" placeholder="Nombres">
+						  </div>
+						  <div class="mb-3">
+							<label for="exampleFormControlInput1" class="form-label">Apelldio Paterno</label>
+							<input type="text" class="form-control" name="paterno" id="exampleFormControlInput1" placeholder="Apelldio Paterno">
+						  </div>
+						  <div class="mb-3">
+							<label for="exampleFormControlInput1" class="form-label">Apellido Materno</label>
+							<input type="text" class="form-control" name="materno" id="exampleFormControlInput1" placeholder="Apellido Materno">
+						  </div>
+						  <div class="mb-3">
+							<label for="exampleFormControlTextarea1" class="form-label">Bibliografia</label>
+							<textarea class="form-control" name="bibliografia" id="exampleFormControlTextarea1" rows="3"></textarea>
+						  </div>
+						  
+						  <div class="mb-3">
+							<label for="exampleFormControlInput1" class="form-label">Foto</label>
+							<input type="file" class="form-control" name="foto" id="exampleFormControlInput1" placeholder="Foto">
+						  </div>
+						  <div class="mb-3">
+							<label for="exampleFormControlInput1" class="form-label">Numero Documento</label>
+							<input type="number" class="form-control" name="documento" id="exampleFormControlInput1" placeholder="Numero Documento">
+						  </div>
+						  <div class="mb-3">
+							<label for="exampleFormControlInput1" class="form-label">Numero Celular</label>
+							<input type="text" class="form-control" name="celular" id="exampleFormControlInput1" placeholder="Numero Celular">
+						  </div>
+						<button type="submit" class="btn btn-primary">Guardar Datos</button>
+					  </form>
 				</div>
+			
+				
 
 				<div class="size-210 bor10 flex-w flex-col-m p-lr-93 p-tb-30 p-lr-15-lg w-full-md">
 					<div class="flex-w w-full p-b-42">

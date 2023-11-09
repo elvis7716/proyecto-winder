@@ -9,6 +9,7 @@ class Persona extends Model
 {
    protected $table = 'personas';
    protected $primarykey = 'personaID';
+   public $timestamps= false;
    protected $fillable =[
     'nombres',
     'paterno',

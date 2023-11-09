@@ -10,4 +10,9 @@ class RegistroProductowebcontroller extends Controller
         return view('web.registro-producto-web');
 
     }
+    public function guardarProducto(Request $request){
+        dd($request);
+
+    }
+    
 }

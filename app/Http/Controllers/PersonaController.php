@@ -4,17 +4,14 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Persona;
-
+use Exception;
 class PersonaController extends Controller
 {
     public function listarPersona(){
-        try{
-            DB::connection()->getPDO();
-            $nombre_dn = DB::connection()->getDatabaseName();
-            alert()->success('operacion exitosa', $nombre_dn)->toToast();
-        }catch(Exception $ex){
-            //toast('Success Toast','error');
-            alert()->error('Error', $ex->getMessage())->toToast();
+        
+        $mensaje = session('mensaje');
+        if($mensaje){
+            alert()->success('operacion exitosa!!!', $mensaje)->toToast();
         }
         $personas = Persona::all();
         //$personas = [];
