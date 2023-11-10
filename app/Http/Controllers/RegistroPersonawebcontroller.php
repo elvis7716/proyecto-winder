@@ -9,17 +9,23 @@ use Exception;
 class RegistroPersonawebcontroller extends Controller
 {
     public function registroPersona(){
+        //dd('elvis');
+        
+        
         $mensaje = session('mensaje');
         if($mensaje){
             alert()->success('operacion exitosa!!!', $mensaje)->toToast();
         }
-        
+       $personas= Persona::all();
+        return view('web.registro-persona-web');
 
 
     }
     public function guardarPersona(Request $request){
+        //dd($request);
 
         try{
+
             $data = [
                 'nombres'=> $request->get('nombres'),
                 'paterno'=> $request->get('paterno'),
@@ -30,16 +36,20 @@ class RegistroPersonawebcontroller extends Controller
                 'celular'=> $request->get('celular'),
     
             ];
-           // Persona::create($data);
-            return redirect()->route('lista-personas')
-            ->with('mensaje','Persona registrada correctamente!!!');
+            //dd($data);
+           Persona::create($data);
 
-        dd($request);
-            
-        }catch(Exception $ex){
-            dd($ex);
-            return redirect()->route('registro.persona')
-            ->with('mensaje',$ex ->getMessage());
+           return redirect()
+           ->route('lista-personas')
+           ->with('mensaje','Persona registrada correctamente!!!');
+
+       //dd($request);
+           
+       }catch(Exception $ex){
+        dd($ex-> getMessage());
+        return redirect()
+        ->route('registro.persona')
+        ->with('mensaje',$ex ->getMessage());
 
 
             
