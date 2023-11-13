@@ -28,4 +28,15 @@ class ProductoController extends Controller
         //dd($request);
         return view('mostrar-producto', compact('id_producto'));
     }
+    public function eliminarProducto(Request $request, $id_producto){
+        //dd($id_producto);
+        $producto= Productos:: find($id_producto);
+        $producto->delete();
+        return redirect()
+        ->route('lista-productos')
+        ->with('mensaje','Producto eliminado correctamente!!!');
+
+        //dd($producto);
+
+    }
 }

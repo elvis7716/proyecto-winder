@@ -26,10 +26,14 @@ Route::get('/', function () {
 Route::get('/nueva-ruta', function () {
     return view('vistaDos');
 });
-
+//listar persona
 Route::get('/lista-personas',
  [PersonaController::class, 'listarPersona']
 )->name('lista-personas');
+
+Route::DELETE('/eliminar-personas/{id_persona}',
+ [PersonaController::class, 'eliminarPersona']
+)->name('eliminar.persona');
 
 Route::get('/lista-personas/{id_persona}',
 [PersonaController::class, 'mostrarPersona']
@@ -54,6 +58,10 @@ Route::get('/pagina-web/registro-producto',
 Route::get('/lista-productos',
  [ProductoController::class, 'listarProducto']
 )->name('lista-productos');
+
+Route::DELETE('/eliminar-productos/{id_producto}',
+ [ProductoController::class, 'eliminarProducto']
+)->name('eliminar.producto');
 
 Route::POST('/pagina-web/guardar-persona',
 [RegistroPersonawebcontroller::class, 'guardarPersona']

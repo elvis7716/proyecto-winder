@@ -29,18 +29,9 @@
 							<label for="exampleFormControlTextarea1" class="form-label">Descripcion</label>
 							<textarea class="form-control"name="descripcion" id="exampleFormControlTextarea1" rows="3"></textarea>
 						  </div>
-						  <div class="row g-3 align-items-center">
-							<div class="col-auto">
-							  <label for="precio" name="precio" class="col-form-label">Precio</label>
-							</div>
-							<div class="col-auto">
-							  <input type="texto"   class="form-control" aria-describedby="passwordHelpInline">
-							</div>
-							<div class="col-auto">
-							  <span id="passwordHelpInline" class="form-text">
-								sin igv
-							  </span>
-							</div>
+						  <div class="mb-3">
+							<label for="exampleFormControlInput1" class="form-label">Precio</label>
+							<input type="number" class="form-control" name="precio" id="exampleFormControlInput1" placeholder="Precio">
 						  </div>
 						  <div class="mb-3">
 							<label for="exampleFormControlInput1" class="form-label">Stock</label>
@@ -65,7 +56,7 @@
 						  </select>
 					
 				        </div>
-						<button type="submit" class="btn btn-primary">Guardar Datos</button>
+						<button type="submit" class="btn btn-danger btn-rounded">Guardar Datos</button>
 					  </form>
 				</div>
 			

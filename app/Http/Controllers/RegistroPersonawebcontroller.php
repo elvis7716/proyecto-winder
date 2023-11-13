@@ -17,21 +17,24 @@ class RegistroPersonawebcontroller extends Controller
             alert()->success('operacion exitosa!!!', $mensaje)->toToast();
         }
        $personas= Persona::all();
+       
         return view('web.registro-persona-web');
 
 
     }
     public function guardarPersona(Request $request){
-        //dd($request);
+      //dd($request);
+      $urifoto =$request->file('foto')->store('uploads','public');
 
         try{
+             
 
             $data = [
                 'nombres'=> $request->get('nombres'),
                 'paterno'=> $request->get('paterno'),
                 'materno'=> $request->get('materno'),
                 'bibliografia'=> $request->get('bibliografia'),
-                'foto'=> $request->get('foto'),
+                'foto'=> $urifoto,
                 'documento'=> $request->get('documento'),
                 'celular'=> $request->get('celular'),
     

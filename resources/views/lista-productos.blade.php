@@ -38,9 +38,10 @@
       <td>{{$producto['descripcion' ]}}</td>
       <td>{{$producto['precio' ]}}</td>
       <td>{{$producto['stock' ]}}</td>
-      <td>{{$producto['fechaderegistro' ]}}</td>
+      <td>{{$producto['fechaRegistro' ]}}</td>
       
-      <td><img style ="height: 50px" src="{{$producto['foto' ]}}" alt=""></td>
+      <td><img style ="height: 50px"
+     src="{{$producto['foto' ]}}" alt=""></td>
       <td class="" style="text-align: center;">
         <a href="{{ route('mostrar-productos', $producto['productoID']) }}"
                             type="button"
@@ -48,7 +49,13 @@
                             </a>
                             <a href="{{ route('mostrar-productos', $producto['productoID']) }}"
                             type="button" class="btn btn-info">Editar</a>
-                            <a type="button" class="btn btn-danger">Eliminar</a>
+                            <form action="{{ route('eliminar.producto',$producto['productoID'] ) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Eliminar</button>
+
+                            </form>
+
       </td>
      
     </tr>

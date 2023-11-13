@@ -44,7 +44,8 @@
 						<label for="exampleFormControlInput1" class="form-label">Numero Celular</label>
 						<input type="text" class="form-control" name="celular" id="exampleFormControlInput1" placeholder="Numero Celular">
 					  </div>
-					<button type="submit" class="btn btn-primary">Guardar Datos</button>
+					<button type="submit" class="btn btn-info btn-rounded">Guardar Datos</button>
+					
 				  </form>
 			</div>
 		
