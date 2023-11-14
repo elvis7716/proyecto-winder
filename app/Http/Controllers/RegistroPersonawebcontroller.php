@@ -24,7 +24,7 @@ class RegistroPersonawebcontroller extends Controller
     }
     public function guardarPersona(Request $request){
       //dd($request);
-      $urifoto =$request->file('foto')->store('uploads','public');
+      $uriFoto =$request->file('foto')->store('uploads','public');
 
         try{
              
@@ -34,7 +34,7 @@ class RegistroPersonawebcontroller extends Controller
                 'paterno'=> $request->get('paterno'),
                 'materno'=> $request->get('materno'),
                 'bibliografia'=> $request->get('bibliografia'),
-                'foto'=> $urifoto,
+                'foto'=> $uriFoto,
                 'documento'=> $request->get('documento'),
                 'celular'=> $request->get('celular'),
     

@@ -18,6 +18,7 @@ class RegistroProductowebcontroller extends Controller
 
     }
     public function guardarProducto(Request $request){
+        $uriFoto =$request->file('foto')->store('uploads','public');
         
 
         //dd($request);
@@ -28,7 +29,7 @@ class RegistroProductowebcontroller extends Controller
                 'precio' => $request->get('precio'),
                 'categoria' => $request->get('categoria'),
                 'stock' => $request->get('stock'),
-                'foto' => $request->get('foto'),
+                'foto' => $uriFoto,
                 'fechaRegistro' => $request->get('fechaRegistro'),
                 'marca' => $request->get('marca'),
             ];
