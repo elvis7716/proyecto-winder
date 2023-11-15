@@ -46,6 +46,8 @@
     <div class="container">
     <h1>lista productos</h1>
     <a type="button" href="{{ route('registro.producto') }}" class="btn btn-warning">Registrar Nuevo Producto</a>
+    <a type="button" target="-blank"href="{{ route('pdf.productos') }}" class="btn btn-primary">Exportar PDF</a>
+       
     
         
     <table class="table">

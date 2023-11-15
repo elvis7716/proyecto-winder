@@ -47,6 +47,7 @@
         
         <h1>Lista Personas</h1>
         <a type="button" href="{{ route('registro.persona') }}" class="btn btn-warning">Registrar Nueva Persona</a>
+        <a type="button" target="-blank"href="{{ route('pdf.personas') }}" class="btn btn-primary">Exportar PDF</a>
        
         <table class="table">
             <thead>

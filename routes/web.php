@@ -8,6 +8,7 @@ use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\RegistroPersonawebcontroller;
 use App\Http\Controllers\RegistroProductowebcontroller;
 use Illuminate\Support\Facades\App;
+use App\Http\Controllers\PdfController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,9 +77,12 @@ Route::get('/lista-productos/{id_producto}',
 )->name('mostrar-productos');
 
 //--------------------------------------------------------------------------------
-Route::get('/pdf', function () {
-    $pdf = App::make('dompdf.wrapper');
-    $pdf->loadHTML('<h1>Test</h1>');
-    return $pdf->stream();
+//exportar pdf
+Route::get('/pdf-personas',
+[PdfController::class,'exportarPdfPersonas']
+)->name('pdf.personas');
+   
+Route::get('/pdf-productos',
+[PdfController::class,'exportarPdfProductos']
+)->name('pdf.productos');
     
-});
